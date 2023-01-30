@@ -18,7 +18,7 @@ function buatKode($tabel, $inisial)
     $angka++;
     $angka = strval($angka);
     $tmp = "";
-    for ($i; $i <= ($panjang - strlen($inisial) - strlen($angka)); $i++) {
+    for ($i = 1; $i <= ($panjang - strlen($inisial) - strlen($angka)); $i++) {
         $tmp = $tmp . "0";
     }
     return $inisial . $tmp . $angka;
