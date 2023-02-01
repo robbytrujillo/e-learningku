@@ -20,7 +20,7 @@ if (isset($_SESSION['SES_Login'])) {
 
     <?php
 } else {
-    #jika sudaj login menu dibawah yang dijalankan  
+    #jika belum login (tidak ada session yang ditemukan)  
 
     ?>
     <ul>
