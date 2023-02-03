@@ -209,7 +209,7 @@ if (isset($_GET['open'])) {
                 die("File tidak ada !");
             include "tugas_edit.php";
             break;
-        
+
         # Data Mengajar
         case 'Mengajar-Data':
             if (!file_exists("mengajar_data.php"))
@@ -235,7 +235,61 @@ if (isset($_GET['open'])) {
             include "mengajar_edit.php";
             break;
 
-        
+        # Report Informasi/Laporan Data  
+        case 'Laporan-Data':
+            if (!file_exists("menu_laporan.php"))
+                die("File tidak ada !");
+            include "menu_laporan.php";
+            break;
+
+        # Laporan Master Data
+        case 'Laporan-Pelajaran':
+            if (!file_exists("laporan_pelajaran.php"))
+                die("File tidak ada !");
+            include "laporan_pelajaran.php";
+            break;
+
+        case 'Laporan-Kelas':
+            if (!file_exists("laporan_kelas.php"))
+                die("File tidak ada !");
+            include "laporan_kelas.php";
+            break;
+
+        case 'Laporan-User':
+            if (!file_exists("laporan_user.php"))
+                die("File tidak ada !");
+            include "laporan_user.php";
+            break;
+
+        case 'Laporan-Guru':
+            if (!file_exists("laporan_guru.php"))
+                die("File tidak ada !");
+            include "laporan_guru.php";
+            break;
+
+        case 'Laporan-Siswa':
+            if (!file_exists("laporan_siswa.php"))
+                die("File tidak ada !");
+            include "laporan_siswa.php";
+            break;
+
+        case 'Laporan-Materi':
+            if (!file_exists("laporan_materi.php"))
+                die("File tidak ada !");
+            include "laporan_materi.php";
+            break;
+
+        case 'Laporan-Tugas':
+            if (!file_exists("laporan_tugas.php"))
+                die("File tidak ada !");
+            include "laporan_tugas.php";
+            break;
+
+        case 'Laporan-Mengajar':
+            if (!file_exists("laporan_mengajar.php"))
+                die("File tidak ada !");
+            include "laporan_mengajar.php";
+            break;
 
         default:
             if (!file_exists("info.php"))
