@@ -1,6 +1,6 @@
 <?php
 if (isset($_SESSION['SES_Login'])) {
-    #jika sudaj login menu dibawah yang dijalankan
+    #jika sudah login menu dibawah yang dijalankan
     ?>
 
     <ul>
