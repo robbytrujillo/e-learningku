@@ -7,7 +7,7 @@ include_once "../library/inc.connection.php";
 ?> 
 <table width="650" border="0" cellpadding="2" cellspacing="1" class="table-border">
   <tr>
-    <td width="789" colspan="2"><h1><b>DATA KELAS  </b></h1></td>
+    <td width="789" colspan="2"><h1><b>DATA KELAS</b></h1></td>
   </tr>
   <tr>
     <td colspan="2" align="right"><a href="?open=Kelas-Add" target="_self"><img src="../images/btn_add_data.png" height="30" border="0"  /></a></td>
