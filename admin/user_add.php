@@ -55,4 +55,36 @@ $dataUsername = isset($_POST['txtUsername']) ? $_POST['txtUsername'] : '';
 ?>
 
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post" name="form1" target="_self" id="form1">
-    <table class=""
+    <table class="table-list" width="650" border="0" cellspacing="1" cellpadding="3">
+        <tr>
+            <td bgcolor="#CCCCCC"><strong>TAMBAH DATA USER </strong></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="182"><strong>Kode</strong></td>
+            <td width="6">:</td>
+            <td width="440"><input name="textfield" type="text" value="<?php echo $dataKode; ?>" size="10" maxlength="4" /></td>
+        </tr>
+        <tr>
+            <td><strong>Nama User </strong></td>
+            <td>:</td>
+            <td><input name="txtNama" type="text" id="txtNama" value="<?php echo $dataNama; ?>" size="70" maxlength="100" /></td>
+        </tr>
+        <tr>
+            <td><strong>Username</strong></td>
+            <td>:</td>
+            <td><input name="txtUsername" type="text" id="txtUsername" value="<?php echo $dataUsername; ?>" size="70" maxlength="100" /></td>
+        </tr>
+        <tr>
+            <td><strong>Password </strong></td>
+            <td>:</td>
+            <td><input name="txtPassword" type="password" id="txtPassword" size="20" maxlength="20" /></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><input name="btnSimpan" type="submit" id="btnSimpan" value="Simpan" /></td>
+        </tr>
+    </table>
+</form>
