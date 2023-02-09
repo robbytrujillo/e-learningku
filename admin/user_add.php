@@ -15,7 +15,7 @@ if (isset($_POST['btnSimpan'])) {
 
     // Validasi Form Inputs
     $pesanError = array();
-    if (trim(txtNama)=="") {
+    if (trim($txtNama)=="") {
         $pesanError[] = "Data <b>Nama User</b> tidak boleh kosong !";
     }
     if (trim($txtUsername)=="") {
