@@ -27,9 +27,9 @@ include_once "../library/inc.connection.php"
 <?php
 // Skrip menampilkan data User
 $mySql 	= "SELECT * FROM user ORDER BY kd_user ASC";
-$myQry 	= mysql_query($mySql, $koneksidb)  or die ("Query  salah: ".mysql_error());
+$myQry 	= mysqli_query($mySql, $koneksidb)  or die ("Query  salah: ".mysqli_error());
 $nomor  = 0; 
-while ($myData = mysql_fetch_array($myQry)) {
+while ($myData = mysqli_fetch_array($myQry)) {
 	$nomor++;
 	$Kode = $myData['kd_user'];
 ?>
