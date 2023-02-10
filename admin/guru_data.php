@@ -33,10 +33,40 @@ $mulai = $baris * ($hal-1);
     </tr>
     <?php
     //skrip menampilkan data Guru
-    
+    $mySql = "SELECT * FROM guru ORDER BY kd_guru ASC LIMIT $mulai, $baris";
+    $myQry = mysqli_query($mySql, $koneksidb) or die ("Query salah: ".mysqli_error());
+    $nomor = 0;
+    while ($myData = mysqli_fetch_array($myQry)) {
+        $nomor++;
+        $kode = $myData['kd_guru'];
     ?>
-    </table>
-    
+    <tr>
+        <td> <?php echo $nomor; ?></td>
+        <td> <?php echo $myData['kd_quru']; ?></td>
+        <td> <?php echo $myData['nm_quru']; ?></td>
+        <td> <?php echo $myData['kelamin']; ?></td>
+        <td> <?php echo $myData['alamat']; ?></td>
+        <td width="8%" align="center">
+            <a href="?open=Guru-Delete&Kode=<?php echo $Kode; ?>" target="=_self" onclick="return confirm('YAKIN INGIN MENGHAPUS DATA GURU INI... ?')">Delete</a>
+        </td>
+        <td width="8%" align="center">
+            <a href="?open=Guru-Edit&Kode=<?php echo $Kode; ?>" target="=_self">Delete</a>
+        </td>
+    </tr>
+
+    <?php } ?>
+
+    </table></td>
+    </tr>
+    <tr>
+        <td width="290">Jumlah Data : <?php echo $jumlah; ?></td>
+        <td width="394" align="right">Halaman Ke : <?php for ($h = 1; $h <= $maks; $h++) {
+            echo "<a href-'?open=Guru-Data&hal=$h'>$h</a> ";
+        }
+        ?>
+        </td>
+    </tr>
+</table>
     
     
     
