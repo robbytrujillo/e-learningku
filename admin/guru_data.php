@@ -21,8 +21,25 @@ $mulai = $baris * ($hal-1);
         <td colspan="2" align="right"><a href="?open=Guru-Add" target="_self"><img src="../images/btn_add_data.png" height="30" border="0" /></a></td>
     </tr>
     <tr>
-        <td colspan="2">
-            
-        </td>
+        <td colspan="2">  
+    <table class="table-list" width="100%" border="0" cellspacing="1" cellpadding="3">
+    <tr>
+        <td width="5%" bgcolor="#CCCCCC"><strong>No</strong></td>
+        <td width="8%" bgcolor="#CCCCCC"><strong>Kode</strong></td>
+        <td width="28%" bgcolor="#CCCCCC"><strong>Nama Guru</strong></td>
+        <td width="5%" bgcolor="#CCCCCC"><strong>L/P</strong></td>
+        <td width="38%" bgcolor="#CCCCCC"><strong>Alamat</strong></td>
+        <td colspan="2" align="center" bgcolor="#CCCCCC"><strong>Tools</strong></td>
+    </tr>
+    <?php
+    //skrip menampilkan data Guru
+    
+    ?>
+    </table>
+    
+    
+    
+    
+    </td>    
     </tr>
 </table>
