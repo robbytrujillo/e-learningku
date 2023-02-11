@@ -63,9 +63,57 @@ if (isset($_POST['btnSimpan'])) {
 $dataKode = buatKode ("guru", "G");
 $dataNama = isset($_POST['txtNama']) ? $_POST['txtNama'] : '';
 $dataKelamin = isset($_POST['cmbKelamin']) ? $_POST['cmbKelamin'] : '';
-$dataKelamin = isset($_POST['txtAlamat']) ? $_POST['txtAlamat'] : '';
-$dataKelamin = isset($_POST['txtNoTelepon']) ? $_POST['txtNoTelepon'] : '';
-$dataKelamin = isset($_POST['txtUsername']) ? $_POST['txtUsername'] : '';
-$dataKelamin = isset($_POST['txtPassword']) ? $_POST['txtPassword'] : '';
+$dataAlamat = isset($_POST['txtAlamat']) ? $_POST['txtAlamat'] : '';
+$dataNoTelepon = isset($_POST['txtNoTelepon']) ? $_POST['txtNoTelepon'] : '';
+$dataUsername = isset($_POST['txtUsername']) ? $_POST['txtUsername'] : '';
+$dataPassword = isset($_POST['txtPassword']) ? $_POST['txtPassword'] : '';
+
 ?>
+
+<form action="<?php $_SERVER['PHP_SELF']; ?>" method="post" name="form1" target="_self" id="form1">
+    <table class="table-list" width="650" border="0" cellspacing="1" cellpadding="3">
+        <tr>
+            <td bgcolor="#CCCCCC"><strong>TAMBAH DATA GURU</strong></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="185">Kode</td>
+            <td width="6">:</td>
+            <td width="437"><input name="textfield" type="text" value="<?php echo $dataKode; ?>" 
+            size="10" maxlength="4" /></td>
+        </tr>
+        <tr>
+            <td>Nama Guru</td>
+            <td>:</td>
+            <td><input name="txtNama" type="text" value="<?php echo $dataNama; ?>" 
+            size="60" maxlength="100" /></td>
+        </tr>
+        <tr>
+            <td>Kelamin</td>
+            <td>:</td>
+            <td><select name="cmbKelamin"><option value="Kosong">....</option>
+            <?php
+            $pilihan = array("L"=> "Laki-laki (L)", "P" => "Perempuan (P)");
+            foreach ($pilihan as $index => $nilai) {
+                if ($dataKelamin == $index) {
+                    $cek = " selected";
+                } else {
+                    $cek = ""; }
+                    echo "<option value='$index' $cek>$nilai</option>";
+                }
+                ?>
+                </select></td>
+        </tr>
+        <tr>
+            <td>Alamat</td>
+            <td>:</td>
+            <td></td>
+        </tr>
+
+
+
+            </td>
+        </tr>
+    </table>
 
