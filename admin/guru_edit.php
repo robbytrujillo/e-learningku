@@ -43,7 +43,7 @@ if (isset($_POST['btnSimpan'])) {
         echo "</div> <br>";
     } else {
         // Memperbaharui Password Jika Ada Perubahan
-        if (trim($txtPassword=="") {
+        if (trim($txtPassword)=="") {
             $txtPassLama = $_POST['txtPassLama'];
             $passwordSQL = ". password='$txtPassLama'";
         }
@@ -51,10 +51,19 @@ if (isset($_POST['btnSimpan'])) {
             $passwordSQL = ", password=MD5('$txtPassword')";
         }
 
-        
+        // Skrip Simpan data ke Database
+        $Kode = $_POST['txtKode'];
+        $mySql = "UPDATE guru SET nm_guru ='$txtNama', 
+        kelamin = '$cmbKelamin', alamat='$txtAlamat', 
+        no_telepon = '$txtNoTelepon', username = '$txtUsername' $passwordSQL
+        WHERE kd_guru = '$Kode'";
+
+        $myQry = mysqli_query($mySql, $koneksidb) or die ("Gagal query".mysqli_error());
+        if ($myQry) {
+            echo "<meta http-equiv='refresh' content='0;url=?open=Guru-Data'>";
+        }
+        exit;
     }
-
-
 }
 
 
