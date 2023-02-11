@@ -66,5 +66,12 @@ if (isset($_POST['btnSimpan'])) {
     }
 }
 
+# Membaca Data dari Database Untuk Diedit
+$Kode = $_GET['Kode'];
+$mySql = "SELECT * FROM guru WHERE kd_guru = '$Kode'";
+$myQry = mysqli_query($mySql, $koneksidb) or die ("Query salah : ".mysqli_error());
+$myData = mysqli_fetch_array($myQry);
+
+
 
 ?>
