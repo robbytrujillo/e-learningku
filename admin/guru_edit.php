@@ -120,4 +120,31 @@ method="post" name="form1" target="_self" id="form1">
             </select>
             </td>
         </tr>
+        <tr>
+            <td>Alamat</td>
+            <td>:</td>
+            <td><input name="txtAlamat" type="text" id="txtAlamat" value="<?php echo $dataAlamat; ?>" size="70" maxlength="100" /></td>
+        </tr>
+        <tr>
+            <td>No. Telepon</td>
+            <td>:</td>
+            <td><input name="txtNoTelepon" type="text" id="txtNoTelepon" value="<?php echo $dataNoTelepon; ?>" size="30" maxlength="30" /></td>
+        </tr>
+        <tr>
+            <td>Username</td>
+            <td>:</td>
+            <td><input name="txtUsername" type="text" id="txtUsername" value="<?php echo $dataUsername; ?>" size="20" maxlength="20" /></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>:</td>
+            <td><input name="txtPassword" type="password" id="txtPassword" size="20" maxlength="20" /> 
+            <input name="txtPassLama" type="hidden" id="txtPassLama" value="<?php echo $myData['password']; ?>" /></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><input name="btnSimpan" type="submit" id="btnSimpan" value="Simpan" /></td>
+        </tr>
     </table>
+</form>
