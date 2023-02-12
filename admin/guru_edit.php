@@ -72,6 +72,52 @@ $mySql = "SELECT * FROM guru WHERE kd_guru = '$Kode'";
 $myQry = mysqli_query($mySql, $koneksidb) or die ("Query salah : ".mysqli_error());
 $myData = mysqli_fetch_array($myQry);
 
-
-
+// Membuat variabel isi ke Form
+$dataKode = $myData['kd_guru'];
+$dataNama = isset($_POST['txtNama']) ? $_POST['txtNama'] : $myData['nm_guru'];
+$dataKelamin = isset($_POST['cmbKelamin']) ? $_POST['cmbKelamin'] : $myData['kelamin'];
+$dataAlamat = isset($_POST['txtAlamat']) ? $_POST['txtAlamat'] : $myData['alamat'];
+$dataNoTelepon = isset($_POST['txtNoTelepon']) ? $_POST['txtNoTelepon'] : $myData['no_telepon'];
+$dataUsername = isset($_POST['txtUsername']) ? $_POST['txtUsername'] : $myData['username'];
 ?>
+
+<form action="<?php $_SERVER['PHP_SELF']; ?>" 
+method="post" name="form1" target="_self" id="form1">
+    <table class="table-list" width="650" border="0" cellspacing="1" cellpadding="3">
+        <tr>
+            <td bgcolor="#CCCCCC"><strong>UBAH DATA GURU </strong></td>
+            <tr>&nbsp;</tr>
+            <tr>&nbsp;</tr>
+        </tr>
+        <tr>
+            <td width="183">Kode</td>
+            <td width="6">:</td>
+            <td width="439"><input name="textfield" type="text" value="<?php echo $dataKode; ?>" size="10" maxlength="4" />
+            <input name="txtKode" type="hidden" id="txtKode" value="<?php echo $dataKode; ?>" />
+        </td>
+        </tr>
+        <tr>
+            <td>Nama Guru </td>
+            <td>:</td>
+            <td><input name="txtNama" type="text" id="txtNama" value="<?php echo $dataNama; ?>" size="60" maxlength="100" /></td>
+        </tr>
+        <tr>
+            <td>Kelamin</td>
+            <td>:</td>
+            <td><select name="cmbKelamin">
+                <option value="Kosong">....</option>
+                <?php
+                $pilihan = array("L"=> "Laki-laki (L)", "P" => "Perempuan (P)");
+                foreach ($pilihan as $index => $nilai) {
+                if ($dataKelamin == $index) {    
+                    $cek = " selected";
+                } else {
+                    $cek = "";
+                }
+                    echo "<option value='$indeks' $cek>$nilai</option>";
+            }
+                ?>
+            </select>
+            </td>
+        </tr>
+    </table>
