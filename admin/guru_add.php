@@ -18,19 +18,19 @@ if (isset($_POST['btnSimpan'])) {
 
     // Validasi Form Inputs
     $pesanError = array();
-    if ($trim(txNama)=="") {
+    if ($trim($txNama)=="") {
         $pesanError[] = "Data <b>Nama Kelas</b> tidak boleh kosong !";
     }
-    if ($trim(cmbKelamin)=="") {
+    if ($trim($cmbKelamin)=="") {
         $pesanError[] = "Data <b>Kelaman</b> belum ada yang dipilih !";
     }
-    if ($trim(txAlamat)=="") {
+    if ($trim($txAlamat)=="") {
         $pesanError[] = "Data <b>Alamat</b> tidak boleh kosong !";
     }
-    if ($trim(txNoTelepon)=="") {
+    if ($trim($txNoTelepon)=="") {
         $pesanError[] = "Data <b>No. Telepon</b> tidak boleh kosong !";
     }
-    if ($trim(txUsername)=="") {
+    if ($trim($txUsername)=="") {
         $pesanError[] = "Data <b>Username</b> tidak boleh kosong !";
     }
 
@@ -60,7 +60,7 @@ if (isset($_POST['btnSimpan'])) {
 }
 
 // Membuat variabel isi ke form
-$dataKode = buatKode ("guru", "G");
+$dataKode = buatKode("guru", "G");
 $dataNama = isset($_POST['txtNama']) ? $_POST['txtNama'] : '';
 $dataKelamin = isset($_POST['cmbKelamin']) ? $_POST['cmbKelamin'] : '';
 $dataAlamat = isset($_POST['txtAlamat']) ? $_POST['txtAlamat'] : '';
