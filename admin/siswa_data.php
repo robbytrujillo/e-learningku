@@ -57,7 +57,7 @@ $mulai = $baris * ($hal-1);
     </tr>
     <tr>
         <td width="394"><strong>Jumlah Data: </strong> <?php echo $jumlah; ?></td>
-        <td width="245" align="right"><strong>Halaman Ke: </strong> <?php echo for ($h = 1; $h <= $maks; $h++) {
+        <td width="245" align="right"><strong>Halaman Ke: </strong> <?php for ($h = 1; $h <= $maks; $h++) {
             echo "<a href='?open=Siswa-Data&hal=$h'>$h</a> ";
         } ?></td>
     </tr>
