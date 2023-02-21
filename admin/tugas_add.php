@@ -71,8 +71,117 @@ if (isset($_POST['btnSimpan'])) {
         '$txtNama', '$txtKeterangan', '$nama_file', '$cmbPelajaran', '$cmbKelas', 
         '$cmbGuru')";
 
-        
+        $myQry = mysqli_query($mySql, $koneksidb) or die ("Gagal query".mysqli_error());
 
+        if ($myQry) {
+            echo "<meta http-equiv='refresh'content='0;url=?open=Tugas-Add'>";
+        }
+        exit;
     }
 }
+
+// Membuat variabel isi ke form
+$dataKode = buatKode("tugas_belajar","T");
+$dataNama = isset($_POST['txtNama']) ? $_POST['txtNama']: '';
+$dataKeterangan = isset($_POST['txtKeterangan']) ? $_POST['txtKeterangan']: '';
+$dataPelajaran = isset($_POST['cmbPelajaran']) ? $_POST['cmbPelajaran']: '';
+$dataKelas = isset($_POST['cmbKelas']) ? $_POST['cmbKelas']: '';
+$dataGuru = isset($_POST['cmbGuru']) ? $_POST['cmbGuru']: '';
 ?>
+
+<form action="<?php $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data" 
+    name="form1" target="_self" id="form1">
+    <table class="table-list" width="700" border="0" cellspacing="1" cellpadding="3">
+        <tr>
+            <td width="209" bgcolor="#CCCCCC"><strong>TAMBAH DATA TUGAS </strong></td>
+            <td width="6">&nbsp;</td>
+            <td width="463">&nbsp;</td>
+        </tr>
+        <tr>
+            <td><strong>Kode</strong></td>
+            <td>:</td>
+            <td><input name="textfield" type="text" value="<?php echo $dataKode; ?>" size="10"
+            maxlength="4" /></td>
+        </tr>
+        <tr>
+            <td><strong>Nama Tugas </strong></td>
+            <td>:</td>
+            <td><input name="txtNama" type="text" id="txtNama" value="<?php echo $dataNama; ?>" 
+            size="70" maxlength="100" /></td>
+        </tr>
+        <tr>
+            <td><strong>Keterangan </strong></td>
+            <td>:</td>
+            <td><input name="txtKeterangan" type="text" id="txtKeterangan" value="<?php echo $dataNama; ?>" 
+            size="70" maxlength="200" /></td>
+        </tr>
+        <tr>
+            <td><strong>File Tugas (Zip/ PDF/ Doc) </strong></td>
+            <td>:</td>
+            <td><input name="txtNamaFile" type="text" id="txtNamaFile" size="40" maxlength="200" /></td>
+        </tr>
+        <tr>
+            <td><strong>Pelajaran</strong></td>
+            <td>:</td>
+            <td><select name="cmbPelajaran"><option value="Kosong">...</option>
+            <?php
+// Skrip menampilkan data Pelajaran ke dalam List/Menu 
+$bacaSql = "SELECT * FROM pelajaran ORDER BY kd_pelajaran";
+$bacaQry = mysqli_query($bacaSql, $koneksidb) or die ("Gagal Query".mysqli_error());
+while ($bacaData = mysqli_fetch_array($bacaQry)) {
+	if ($bacaData['kd_pelajaran'] == $dataPelajaran) {
+		$cek = " selected";
+	} else { $cek=""; }
+	
+	echo "<option value='$bacaData[kd_pelajaran]' $cek> $bacaData[nm_pelajaran] </option>";
+}
+?>
+</select>	</td>
+    </tr>
+    <tr>
+      <td><strong>Kelas</strong></td>
+      <td>:</td>
+      <td>
+<select name="cmbKelas">
+  <option value="Kosong">....</option>
+  <?php
+// Skrip menampilkan data Kelas ke dalam List/Menu 
+$bacaSql = "SELECT * FROM kelas ORDER BY kd_kelas";
+$bacaQry = mysqli_query($bacaSql, $koneksidb) or die ("Gagal Query".mysqli_error());
+while ($bacaData = mysqli_fetch_array($bacaQry)) {
+if ($bacaData['kd_kelas'] == $dataKelas) {
+	$cek = " selected";
+} else { $cek=""; }
+
+echo "<option value='$bacaData[kd_kelas]' $cek> $bacaData[nm_kelas] </option>";
+}
+?>
+</select>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Guru</strong></td>
+      <td>:</td>
+      <td><select name="cmbGuru" id="cmbGuru">
+        <option value="Kosong">....</option>
+	<?php
+	// Skrip menampilkan data Guru ke dalam List/Menu 
+	$bacaSql = "SELECT * FROM guru ORDER BY kd_guru";
+	$bacaQry = mysqli_query($bacaSql, $koneksidb) or die ("Gagal Query".mysqli_error());
+	while ($bacaData = mysqli_fetch_array($bacaQry)) {
+	if ($bacaData['kd_guru'] == $dataGuru) {
+		$cek = " selected";
+	} else { $cek=""; }
+	
+	echo "<option value='$bacaData[kd_guru]' $cek> $bacaData[nm_guru] </option>";
+	}
+	?>
+      </select></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="btnSimpan" value=" SIMPAN " style="cursor:pointer;" /></td>
+    </tr>
+  </table>
+</form>
