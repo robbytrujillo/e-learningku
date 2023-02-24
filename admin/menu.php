@@ -1,5 +1,5 @@
 <?php
-if (isset($_SESSION['SES_Login'])) {
+if (isset($_SESSION['SES_LOGIN'])) {
     #jika sudah login menu dibawah yang dijalankan
     ?>
 
