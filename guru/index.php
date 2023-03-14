@@ -31,13 +31,17 @@ date_default_timezone_set("Asia/Jakarta");
             </td>
         </tr>
         <tr valign="top">
-            
-        </tr>
-
+            <td width="15%" style="border-right:5px solid #DDDDDD;">
+            <div style="margin:5px; padding:5px;">
+        <?php include "menu.php"; ?>
+        </div>
+        </td>
+        <td width="69%" height="550"></div style="margin:5px; padding:5px;">
+        
+        <?php include "buka_file.php"; ?> </div>
+        </td>
         </tr>
     </table>
-
-    </div>
-    
 </body>
+</div>
 </html>
